@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import classes from './App.module.css';
+import Menu from './Menu';
+import Reports from './Report';
+import ToDoList from './todolist';
 
-function App() {
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.to_do_list}>  
+      <BrowserRouter>
+        <Menu />
+        <Switch>
+          <Route path='/tasks'>
+            <ToDoList dispatch={props.dispatch} AllTasks={props.AllTasks} NewTextValue={props.NewTextValue}/>
+          </Route>
+          <Route path='/reports'>
+            <Reports />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
