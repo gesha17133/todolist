@@ -2,6 +2,7 @@
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { store } from "./state";
+import { drumsStore } from "./drums-state";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
@@ -13,6 +14,10 @@ export default function RenderList(props){
             dispatch={store.dispatch.bind(store)}
             AllTasks={(store.GetState()).items}
             NewTextValue={store.GetState().newPostText}
+            InputUserText={store.GetState().newMessageBody}
+            Users={store.GetState().users}
+            Messages={store.GetState().messages}
+            Drumsstore={drumsStore.GetDstate().sounds}
             />
         </React.StrictMode>,
         document.getElementById('root')

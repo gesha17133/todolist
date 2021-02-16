@@ -7,6 +7,37 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+div.my{
+  text-align: left;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+li.my{
+  text-align: right;
+  width: 300px;
+  position: relative;
+}
+
+li.my span{
+  font-size: 10px;
+  position: absolute;
+  left: 5px;
+  bottom: 5px
+}
+
+li.opposite span{
+  font-size: 10px;
+  position: absolute;
+  right: 5px;
+  bottom: 5px
+}
+
+li.opposite{
+  text-align: left;
+  width: 300px;
+  position: relative;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

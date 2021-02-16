@@ -14,8 +14,14 @@ export default function EditComponent(props){
 
     function FuckOff(){
         let text = Text.current.value;
-        props.dispatch({type:"EDIT-TASK", key: props.index, item: text })
-        setState(props.state)        
+        if(text !== ''){
+            props.dispatch({type:"EDIT-TASK", key: props.index, item: text })
+            setState(props.state)      
+        }
+        else{
+            props.dispatch({type:"EDIT-TASK", key: props.index, item: props.valya })
+            setState(props.state)
+        }
     }
 
     return(

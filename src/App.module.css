@@ -69,7 +69,7 @@ html{
   background-size:cover;
   background-repeat: no-repeat;
   min-height: 100vh;
-  padding-top: 200px;
+  padding-top: 100px;
 }
 
 ul{
@@ -82,7 +82,48 @@ ul{
   padding: 10px;
   border-radius: 5px;;
 }
-
+.userlist{
+  max-width: 150px;
+  margin-left: 0;
+}
+.MenuTop ul{
+  list-style-type: none;
+}
+.avatart{
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+.UserHeader{
+  padding: 10px 0;
+  background: #ED553B;
+  color: #fff;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+.MenuTop li{
+  max-width: 250px;
+  padding: 10 30px;
+  display: inline-block;
+  margin: 0 20px;
+}
+.chatWindow{
+  width: 100%;
+  background: #f6D55C
+}
+.MenuTop li a{
+  padding: 10px 30px;
+  color: #fff;
+}
+.ZalupkaUpUpka{
+  margin: 0 auto;
+  max-width: 800px;
+  display: flex;
+}
 li{
   margin: 10px 0;
   color: #fff;
@@ -115,6 +156,45 @@ ul li{
   flex-direction: column;
   justify-content: start;
 }
+.mesasgeContainer{
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0;
+  left: 0;
+  text-align: center;
+  background: #ED553B;
+  position: relative;
+}
+li.opposite{
+  text-align: left;
+}
+li.my{
+  text-align: right;
+}
+.mesasgeContainer textarea{
+  width: 400px;
+  height: 130px;
+  background: transparent;
+  border: none;
+  background: #20639B;
+  outline: none;
+  color: #fff;
+  resize: vertical;
+}
+
+.mesasgeContainer button{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: #f6D55C;
+  cursor: pointer;
+  color: #000;
+  border: none;
+  outline: none;
+  padding: 5px 20px; 
+  font-size: 18px;
+  font-weight: bold;
+}
 
 .MenuTop{
   width: 100vw;
@@ -122,6 +202,17 @@ ul li{
   top: 0;
   left: 0;
   right: 0;
+  z-index: 100;
+}
+.chatWindowWrap{
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+.chatWindow{
+  position: relative;
+  height: 606px;
+  overflow-y: scroll;
 }
 
 .App-link {
