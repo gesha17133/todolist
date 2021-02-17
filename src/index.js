@@ -1,8 +1,7 @@
 
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { store } from "./state";
-import { drumsStore } from "./drums-state";
+import { store } from "./redux/redux-store";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
@@ -17,12 +16,13 @@ export default function RenderList(props){
             InputUserText={store.GetState().newMessageBody}
             Users={store.GetState().users}
             Messages={store.GetState().messages}
-            Drumsstore={drumsStore.GetDstate().sounds}
+            Drumsstore={store.GetState().sounds}
             />
         </React.StrictMode>,
         document.getElementById('root')
     );
 }
+
 
 RenderList( store.GetState() );
 store.subscribe(RenderList);

@@ -7,7 +7,7 @@ function ToDoList(props) {
       <div className={classes.tasksTodo}>
         <ul className={classes.Tasks}>
             {props.AllTasks.map(function( item, index ){
-            return <ItemList  value={item} index={index} dispatch={props.dispatch} />
+              return <ItemList  value={item} index={index} dispatch={props.dispatch} />
             })
             }
         </ul>

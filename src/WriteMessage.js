@@ -12,7 +12,7 @@ const WriteMessage = (props) => {
         let refText = Text.current.value
         props.dispatch({type:'CHANGE-TEXTAREA', InputMessageValue: refText})
     }
-
+    
     return (
         <div className={classes.mesasgeContainer}>
            <textarea onChange={ChangeTextArea} value={props.InputUserText} ref={Text} name="thewriting_component" id="writer_text" />

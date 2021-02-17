@@ -7,6 +7,7 @@
 .sounds{
     max-width: 600px;
     margin: 0 auto;
+    position: relative;
 }
 
 .key{
@@ -23,4 +24,25 @@
     color: #444;
     box-shadow: 1px 1px 1px rgb(0 0 0 / 65%);
     z-index: 2;
+    position: absolute;
+}
+.Kick{
+    position: absolute;
+    bottom: 150px;
+    left: 290px
+}
+.Snare{
+    position: absolute;
+    bottom: 200px;
+    left: 425px;
+}
+.Hat-Close{
+    position: absolute;
+    bottom: 270px;
+    right: 120px;
+}
+.Hat-Open{
+    position: absolute;
+    bottom: 370px;
+    right: 120px;
 }

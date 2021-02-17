@@ -27,9 +27,6 @@ export let drumsStore = {
     GetDstate(){
         return this._Dstate 
     },
-    dispatch(action){
-        
-    }
 
 }
 

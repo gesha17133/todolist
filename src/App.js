@@ -11,13 +11,13 @@ function App(props) {
         <Menu />
         <Switch>
           <Route path='/tasks'>
-            <ToDoList dispatch={props.dispatch} AllTasks={props.AllTasks} NewTextValue={props.NewTextValue}/>
+            <ToDoList dispatch={props.dispatch} AllTasks={props.AllTasks} NewTextValue={props.NewTextValue} />
           </Route>
           <Route path='/reports'>
-            <Reports Users={props.Users} Messages={props.Messages} dispatch={props.dispatch} InputUserText={props.InputUserText}/>
+            <Reports Users={props.Users} Messages={props.Messages} dispatch={props.dispatch} InputUserText={props.InputUserText} />
           </Route>
           <Route path="/drumpad">
-            <Drumpad Drumsstore={props.Drumsstore} />
+            <Drumpad Drumsstore={props.Drumsstore} dispatch={props.dispatch} />
           </Route>
         </Switch>
       </BrowserRouter>

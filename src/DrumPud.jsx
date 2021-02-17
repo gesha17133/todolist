@@ -1,15 +1,22 @@
 import './Drumpad.css';
 import DrumSound from './DrumSound';
-const Drumpad = (props) => {
-    let PressF = () => {
-        alert('gook')
+import  {useState}  from "react";
+
+const Drumpad = (props) => {    
+    
+    const[state, setState] = useState('default');
+    
+    let PressF = (e) => {
+        setState(e.keyCode);
+        props.dispatch({type: 'SET-ACTIVE'});
     }
+    
     return(
-        <div  className="drummachine" tabindex={0} onKeyDown={PressF}>
+        <div className="drummachine" onKeyDown={PressF} tabIndex={0}>
             <img class="drum-kit" src="https://raw.githubusercontent.com/ArunMichaelDsouza/javascript-30-course/master/src/01-javascript-drum-kit/img/drum-kit.png" alt="Drum Kit" />
             <div className='sounds'>
                 {props.Drumsstore.map((sound, index) => {
-                    return ( <DrumSound index={index} keydown={props.keydown} sound={sound} Drumsstore={props.Drumsstore} />)
+                    return ( <DrumSound state={state} keyCode={sound.keyCode} index={index} sound={sound} Drumsstore={props.Drumsstore} dispatch={props.dispatch} />)
                 })
                 }
             </div>

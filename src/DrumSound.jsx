@@ -1,20 +1,23 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import './Drumpad.css'
 
 const DrumSound = (props) => {
-    
-    const myRef = useRef();
-
-    let PlaySound = () => {
-       let audio = myRef.current;
-       audio.play()
+    const [ state, setState ] = useState('default'); 
+    let sound = new Audio(props.sound.Soundlink);
+    if( props.state === props.keyCode ){
+        props.dispatch({type:'PLAY-SOUND', SOUND: sound })
     }
     
-    return(
+    function PlaySound(){
+        props.dispatch({ type:'PLAY-SOUND', SOUND: sound })
+        setState('pencil');
+    }
+    
+    return( 
         <div className="DrumSingleSound">
-            <audio ref={myRef} src={props.sound.Soundlink}>link</audio>
-            <button onClick={PlaySound} className="key">p</button>
+            <button onClick={PlaySound} className={`key ${props.sound.sound} ${state}`}>p</button>
         </div>
     )
+
 }
 export default DrumSound;

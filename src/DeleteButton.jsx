@@ -6,7 +6,6 @@ export default function DeleteFinally(props){
     let FunctionDelete = () => {
         props.dispatch({type: 'DELETE-TASK', key: props.index }); 
     }
-    
     return (
         <button onClick={FunctionDelete} onKeyDown={ FunctionDelete } className={classes.MyPenisIsVeryBig}><FaTrash/></button>
     )
