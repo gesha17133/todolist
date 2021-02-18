@@ -1,16 +1,17 @@
 import { useRef } from 'react';
 import classes from './App.module.css';
+import { changeTextAreaCreator, writeMessageCreator } from './state';
 const WriteMessage = (props) => {
     const Text = useRef();
     
     let CreateMessage = () => {
         let text = Text.current.value;
-        props.dispatch({type:'WRITE-MESSAGE',TextWrite: text});
+        props.dispatch(writeMessageCreator(text));
     }
 
     let ChangeTextArea = () => {
         let refText = Text.current.value
-        props.dispatch({type:'CHANGE-TEXTAREA', InputMessageValue: refText})
+        props.dispatch(changeTextAreaCreator(refText))
     }
     
     return (

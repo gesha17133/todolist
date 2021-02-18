@@ -3,13 +3,12 @@ import DrumPadReducer from "../reducers/drums-reducers";
 import ReportsReducer from "../reducers/reports-reducer";
 import ToDoReducer from "../reducers/todolist-reducer";
 
-let store = createStore();
-
 let reducers = combineReducers({
-    TodoList: ToDoReducer,
-    Reports: ReportsReducer,
-    Drumpad: DrumPadReducer, 
-}
-); 
+    items: ToDoReducer,
+    messages: ReportsReducer,
+    sounds: DrumPadReducer,
+}); 
+
+export let store = createStore(reducers);
 
 export default store;

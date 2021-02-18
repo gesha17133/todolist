@@ -8,7 +8,7 @@ const UserList = (props) => {
                 props.Users.map((item, index) => {
                     return (
                     <li className={classes.user}>
-                        <Link to={`/reports/chat/${index}`}></Link>
+                        <Link to={`/reports/chat/${index}`}>{item}</Link>
                     </li>
                     ) 
                 })

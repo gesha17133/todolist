@@ -1,6 +1,8 @@
 import classes from "./App.module.css";
 import { createRef, useState } from "react";
 import {FaCheck, FaPen} from 'react-icons/fa';
+import { addActionEditCreatot } from "./state";
+
 export default function EditComponent(props){
 
     const[state, setState] = useState(props.state);
@@ -14,12 +16,12 @@ export default function EditComponent(props){
 
     function FuckOff(){
         let text = Text.current.value;
-        if(text !== ''){
-            props.dispatch({type:"EDIT-TASK", key: props.index, item: text })
+        if(text !== ''){ 
+            props.dispatch(addActionEditCreatot(props.index, text))
             setState(props.state)      
         }
         else{
-            props.dispatch({type:"EDIT-TASK", key: props.index, item: props.valya })
+            props.dispatch(addActionEditCreatot(props.index, props.valya))
             setState(props.state)
         }
     }

@@ -1,6 +1,7 @@
 import './Drumpad.css';
 import DrumSound from './DrumSound';
 import  {useState}  from "react";
+import { drumsReastartActionCreator } from './state';
 
 const Drumpad = (props) => {    
     
@@ -8,7 +9,7 @@ const Drumpad = (props) => {
     
     let PressF = (e) => {
         setState(e.keyCode);
-        props.dispatch({type: 'SET-ACTIVE'});
+        props.dispatch(drumsReastartActionCreator());
     }
     
     return(

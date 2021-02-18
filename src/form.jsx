@@ -1,6 +1,7 @@
 import { createRef } from "react";
 import { FaPlus } from "react-icons/fa";
 import classes from "./App.module.css";
+import { addActionTaskCreator, inputActionCreator } from "./state";
 
 export default function CreateForm(props) {
 
@@ -9,16 +10,15 @@ export default function CreateForm(props) {
 	let CreateFinally = () => {
 		let text = Text.current.value;
 		if (text) { 
-			props.dispatch( {type: 'CREATE-TASK', Task: text } );
-		}
-		props.dispatch({type: 'CHANGE-POST-VALUE', TextInput: '' })
+			props.dispatch( addActionTaskCreator(text) );
+		} 
+		props.dispatch(inputActionCreator(''))
 	}
 
 	let UpdateText = () => {
 		let text = Text.current.value;
-		props.dispatch({type: 'CHANGE-POST-VALUE', TextInput: text })
+		props.dispatch(inputActionCreator(text))
 	}
-
 	return (
 		<div className={classes.DivchikForm}>
 			<input ref={Text} onChange={UpdateText} value={props.NewTextValue} className={classes.InputikFormochki} type="text" />

@@ -1,7 +1,6 @@
-
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { store } from "./redux/redux-store";
+import { store } from "./state";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
@@ -11,11 +10,11 @@ export default function RenderList(props){
         <React.StrictMode>
           <App 
             dispatch={store.dispatch.bind(store)}
-            AllTasks={(store.GetState()).items}
-            NewTextValue={store.GetState().newPostText}
-            InputUserText={store.GetState().newMessageBody}
+            AllTasks={store.GetState().items.items}
+            NewTextValue={store.GetState().items.newMessageBody}
+            InputUserText={store.GetState().messages.newMessageBody}
             Users={store.GetState().users}
-            Messages={store.GetState().messages}
+            Messages={store.GetState().messages.messages}
             Drumsstore={store.GetState().sounds}
             />
         </React.StrictMode>,
