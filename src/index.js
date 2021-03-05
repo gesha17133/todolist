@@ -1,6 +1,6 @@
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { store } from "./state";
+import { store } from "./redux/redux-store";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
@@ -10,12 +10,12 @@ export default function RenderList(props){
         <React.StrictMode>
           <App 
             dispatch={store.dispatch.bind(store)}
-            AllTasks={store.GetState().items.items}
-            NewTextValue={store.GetState().items.newMessageBody}
-            InputUserText={store.GetState().messages.newMessageBody}
-            Users={store.GetState().users}
-            Messages={store.GetState().messages.messages}
-            Drumsstore={store.GetState().sounds}
+            AllTasks={store.getState().items.items}
+            NewTextValue={store.getState().items.newMessageBody}
+            InputUserText={store.getState().messages.newMessageBody}
+            Users={store.getState().messages.users}
+            Messages={store.getState().messages.messages}
+            Drumsstore={store.getState().sounds}
             />
         </React.StrictMode>,
         document.getElementById('root')
@@ -23,7 +23,7 @@ export default function RenderList(props){
 }
 
 
-RenderList( store.GetState() );
+RenderList( store.getState() );
 store.subscribe(RenderList);
 
 // If you want to start measuring performance in your app, pass a function

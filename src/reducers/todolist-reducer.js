@@ -4,7 +4,7 @@ const CHANGE_POST_VALUE = 'CHANGE_POST_VALUE';
 const DELETE_TASK = 'DELETE_TASK';
 
 let initialState = {
-    items: { items: ['mondo riny', 'Cream', 'pie', 'creators'], newPostText: "hello"},
+    items: ['mondo riny', 'Cream', 'pie', 'creators'], newPostText: "hello"
 };
 
 const ToDoReducer = (state = initialState, action) => {

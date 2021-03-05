@@ -2,7 +2,6 @@ const WRITE_MESSAGE = 'WRITE-MESSAGE';
 const CHANGE_TEXTAREA = 'CHANGE-TEXTAREA';
 
 let initialState = {
-    messages: {
         messages: [
             { text: 'Hello I am dev', time: '17:20', type: 'opposite' },
             { text: 'good morning dev', time: '17:20', type: 'my' },
@@ -10,7 +9,7 @@ let initialState = {
             { text: 'Herrington', time: '17:20', type: 'my' }
         ],
         newMessageBody: "start typing",
-    }
+        users: ['Dima', 'Vlad', 'Kolia', 'Sasha', 'Vitalik', 'Ruslan', 'Max', 'Tania', 'Kolia2', 'Bogdan', 'Yaryk', 'Amsteri'],
 };
 
 const ReportsReducer = (state = initialState, action) => {
