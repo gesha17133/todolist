@@ -12,12 +12,12 @@ export default function CreateForm(props) {
 		if (text) { 
 			props.dispatch( addActionTaskCreator(text) );
 		} 
-		props.dispatch(inputActionCreator(''))
+		props.dispatch( inputActionCreator(''))
 	}
 
 	let UpdateText = () => {
 		let text = Text.current.value;
-		props.dispatch(inputActionCreator(text))
+		props.dispatch( inputActionCreator(text) )
 	}
 	return (
 		<div className={classes.DivchikForm}>

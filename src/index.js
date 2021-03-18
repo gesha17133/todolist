@@ -4,24 +4,18 @@ import { store } from "./redux/redux-store";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import { MyContext } from './contextstore';
 
 export default function RenderList(props){
     ReactDOM.render(
         <React.StrictMode>
-          <App 
-            dispatch={store.dispatch.bind(store)}
-            AllTasks={store.getState().items.items}
-            NewTextValue={store.getState().items.newMessageBody}
-            InputUserText={store.getState().messages.newMessageBody}
-            Users={store.getState().messages.users}
-            Messages={store.getState().messages.messages}
-            Drumsstore={store.getState().sounds}
-            />
+           <MyContext.Provider value={store}>
+            <App />
+            </MyContext.Provider>
         </React.StrictMode>,
         document.getElementById('root')
     );
 }
-
 
 RenderList( store.getState() );
 store.subscribe(RenderList);

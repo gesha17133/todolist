@@ -13,7 +13,7 @@ let initialState = {
 };
 
 const ReportsReducer = (state = initialState, action) => {
-
+    
     switch (action.type) {
 
         case WRITE_MESSAGE:

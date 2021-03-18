@@ -10,18 +10,21 @@ export default function ItemList(props) {
 	const AssTripTwo = () => {
 		setState('gooks')
 	}
-
+	
 	return (
 		<div>
 			<li className={classes.ListSingleItem}>
+				
 				<div>
 					{props.index + 1}.
-					{props.value}
+					{props.item }
 				</div>
-					<div className={classes.Actions}>
-						{state === 'regularState' && ( <EditComponent valya={props.value} index={props.index} dispatch={props.dispatch} State={props.state} onClick={AssTripTwo} /> ) }
-						<DeleteFinally index={props.index} dispatch={props.dispatch} />
-					</div>
+
+				<div>
+					{state === 'regularState' && ( <EditComponent text_value={props.item} index={props.index} dispatch={props.store.dispatch.bind(props.store)} state={state} onClick={AssTripTwo} /> ) }
+					<DeleteFinally index={props.index} dispatch={props.store.dispatch.bind(props.store)} />
+				</div>
+
 			</li>
 		</div>
 	)

@@ -4,26 +4,26 @@ const CHANGE_POST_VALUE = 'CHANGE_POST_VALUE';
 const DELETE_TASK = 'DELETE_TASK';
 
 let initialState = {
-    items: ['mondo riny', 'Cream', 'pie', 'creators'], newPostText: "hello"
+    items_list: ['mondo riny', 'Cream', 'pie', 'creators'], newPostText: "hello"
 };
 
 const ToDoReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case CREATE_TASK:
-            state.items.push(action.Task); 
+            state.items_list.push(action.Task); 
             return state;
 
         case EDIT_TASK:
-            state.items.splice(action.key, 1, action.item); 
+            state.items_list.splice(action.key, 1, action.item); 
             return state;
 
         case CHANGE_POST_VALUE:
-            state.items.newPostText = action.TextInput; 
+            state.newPostText = action.TextInput; 
             return state;
         
         case DELETE_TASK:
-            state.items.splice(action.key, 1);
+            state.items_list.splice(action.key, 1);
             return state;
         default:
             return state;

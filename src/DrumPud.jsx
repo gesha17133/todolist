@@ -2,26 +2,24 @@ import './Drumpad.css';
 import DrumSound from './DrumSound';
 import  {useState}  from "react";
 import { drumsReastartActionCreator } from './state';
+import { MyContext } from './contextstore';
 
-const Drumpad = (props) => {    
-    
-    const[state, setState] = useState('default');
-    
-    let PressF = (e) => {
-        setState(e.keyCode);
-        props.dispatch(drumsReastartActionCreator());
-    }
+const Drumpad = () => {    
     
     return(
-        <div className="drummachine" onKeyDown={PressF} tabIndex={0}>
-            <img class="drum-kit" src="https://raw.githubusercontent.com/ArunMichaelDsouza/javascript-30-course/master/src/01-javascript-drum-kit/img/drum-kit.png" alt="Drum Kit" />
+        <div className="drummachine" >
+            <img className="drum-kit" src="https://raw.githubusercontent.com/ArunMichaelDsouza/javascript-30-course/master/src/01-javascript-drum-kit/img/drum-kit.png" alt="Drum Kit" />
             <div className='sounds'>
-                {props.Drumsstore.map((sound, index) => {
-                    return ( <DrumSound state={state} keyCode={sound.keyCode} index={index} sound={sound} Drumsstore={props.Drumsstore} dispatch={props.dispatch} />)
-                })
-                }
+            <MyContext.Consumer>
+            {value =>            
+                    value.getState().sounds.map((sound, index) => {
+                        return ( <DrumSound sound={sound } index={index} dispatch={value.dispatch.bind(value)} /> ) 
+                    })
+                
+            }
+            </MyContext.Consumer>
             </div>
         </div>
-    )
+    )    
 }
 export default Drumpad;
